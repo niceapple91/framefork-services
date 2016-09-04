@@ -4,7 +4,6 @@ import com.soap.bussinessLogic.RangeCreationLogic;
 import com.soap.client.RangeWsClient;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -21,7 +20,7 @@ public class CreateRangeRequest {
     @Test
     public void creteRange(){
         RangeCreationLogic rangeLogic = new RangeCreationLogic();
-        System.out.println(cl.createRanges(rangeLogic.createDefaultRange()));
+        System.out.println((cl.createRanges(rangeLogic.createDefaultRange()).getSummary().getSummaryMessage()));
 
     }
 }

@@ -4,7 +4,6 @@ import com.soap.bussiness.dto.RequestHeader;
 import com.soap.bussiness.range.RangeAttributesConstructor;
 import com.soap.bussiness.range.RangePropertyReader;
 import com.soap.bussiness.range.RangeRequestsConstructor;
-import com.soap.bussiness.range.productmanager.ProductManagerConstructor;
 import com.adidas.sef.ws.schema.range.*;
 
 import java.util.ArrayList;

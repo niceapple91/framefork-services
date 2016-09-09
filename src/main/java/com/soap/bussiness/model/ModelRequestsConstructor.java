@@ -3,13 +3,14 @@ package com.soap.bussiness.model;
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
+import com.adidas.sef.ws.schema.model.*;
 
 /**
  * Created by Администратор on 04.09.2016.
  */
 public class ModelRequestsConstructor {
 
-    public CreateNewModels createCreateModelRequest(Map<String,String> attributes, List<CreateNewModels.CreateNewModel> models){
+    public CreateNewModels createCreateModelRequest(Map<String,String> attributes, List<CreateNewModels.CreateModel> models){
         CreateNewModels request = new CreateNewModels();
         request.setUserName(attributes.get("username"));
         request.setBusinessProcess(attributes.get("businessProcess"));
@@ -18,7 +19,7 @@ public class ModelRequestsConstructor {
         return request;
     }
 
-    private CreateNewModels setListRanges(CreateNewModels request, List<CreateNewModels.CreateNewModel> modelsForCreation){
+    private CreateNewModels setListModels(CreateNewModels request, List<CreateNewModels.CreateModel> modelsForCreation){
         Class clazz = request.getClass();
         Field f;
         try {

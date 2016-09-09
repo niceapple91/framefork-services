@@ -21,7 +21,9 @@ public class ModelPropertyReader {
         Map<String, Object> properties = new HashMap<>();
         SimplePropertyCreator reader = new SimplePropertyCreator();
         ListPropertiesTransformer transformer = new ListPropertiesTransformer();
+        properties.put("constructionTypeCode",reader.getProperty("constructionTypeCode"));
         properties.put("modelNameShort",reader.getProperty("modelNameShort"));
+        properties.put("brandCode",reader.getProperty("brandCode"));
         properties.put("creationCenterCode",reader.getProperty("creationCenterCode"));
         properties.put("genderCode",reader.getProperty("genderCode"));
         properties.put("ageGroupCode",reader.getProperty("ageGroupCode"));
@@ -65,12 +67,12 @@ public class ModelPropertyReader {
         } catch (DatatypeConfigurationException e) {
             e.printStackTrace();
         }
-        properties.put("transporationLeadTime",reader.getProperty("transporationLeadTime"));
+//        properties.put("transporationLeadTime",reader.getProperty("transporationLeadTime"));
         properties.put("developmentTrackCode",reader.getProperty("developmentTrackCode"));
         properties.put("consumerBenefit",reader.getProperty("consumerBenefit"));
         properties.put("targetConsumerCode",reader.getProperty("targetConsumerCode"));
         properties.put("mrktProposedSize",reader.getProperty("mrktProposedSize"));
-        properties.put("replenishmentFlag",reader.getProperty("replenishmentFlag"));
+//        properties.put("replenishmentFlag",reader.getProperty("replenishmentFlag"));
         properties.put("sizePage",reader.getProperty("sizePage"));
         properties.put("targetMaterialDescription",reader.getProperty("targetMaterialDescription"));
         properties.put("labelGroup",reader.getProperty("labelGroup"));
@@ -85,7 +87,7 @@ public class ModelPropertyReader {
         properties.put("additionalCoding",transformer.getProperty(AdditionalCodings.class, "additionalCoding", "additionalCoding"));
         properties.put("hangTag",transformer.getProperty(HangTags.class, "hangTag", "hangTag"));
         properties.put("marketingModelName",transformer.getProperty(MarketingModelNames.class, "marketingModelName", "marketingModelName"));
-        properties.put("package",transformer.getProperty(Packages.class, "packageCode", "package"));
+        properties.put("package",transformer.getProperty(Packages.class, "package", "packageCode"));
         properties.put("technologyComponent",transformer.getProperty(TechnologyComponents.class, "technologyComponent", "technologyComponent"));
 
         properties.put("macroModel", MacroModelConstructor.createTN_MM());

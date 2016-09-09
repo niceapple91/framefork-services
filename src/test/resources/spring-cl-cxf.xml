@@ -9,6 +9,10 @@
     <context:component-scan
             base-package="com.soap.client">
     </context:component-scan>
+    <bean id="article" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
+        <property name="address" value="http://deheremap6722:8080/soap-services/ArticleWs?wsdl"/>
+        <property name="serviceClass" value="com.adidas.sef.ws.ArticleWs"/>
+    </bean>
     <bean id="model" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
         <property name="address" value="http://deheremap6722:8080/soap-services/ModelWs?wsdl"/>
         <property name="serviceClass" value="com.adidas.sef.ws.ModelWs"/>
